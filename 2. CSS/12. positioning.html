@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>Positioning</title>
+        <style>
+            .bluebox {
+                color: white;
+                background-color: #434C98;
+                height: 100px;
+                width: auto;
+                position: fixed;
+                top: 30px;
+                left: 30px;
+                z-index: 1;
+            }
+            
+            .yellowbox {
+                background-color: rgb(220, 226, 40);
+                height: 100px;
+                width: auto;
+/*                In relative positioning, the division is positioned relative to the original position of the division.    */
+                position: relative;
+                top: 20px;
+                z-index: 0;
+            }
+            
+            .greenbox {
+                background-color: #0fff0f;
+                height: 100px;
+                width: auto;
+/*                In asolute positioning, the element is positioned relative to the first parent i.e. non static. And if there is no such a parent i.e. not non-static or static (like in our case) then we will position it next to the html element.
+                */
+                position: absolute;
+                top: 40px;
+                left: 40px;
+            }
+            
+            .great {
+                background-color: #f59393
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="bluebox">
+            <p> Facebook is <span class="great">great.</span></p>
+        </div>
+        
+        <div class="yellowbox">
+            <p>Apple</p>
+        </div>
+        
+        <div class="greenbox">
+            <p>Microsoft</p>
+        </div>
+    </body>
+    
+<!--
+    
+Z-INDEX
+The element will show on top if their z-index is positive.
+If an element is not given a z-index it will inherit from its parent.
+The <html> element's z-index by default is 0 and any element with a positive z-index will show on top of them.
+If there is no z-index for any element then the element which occurs last will be on topmost postion.
+
+-->
+    
+
+</html>
+
+

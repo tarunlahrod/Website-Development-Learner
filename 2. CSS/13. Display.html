@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>Display</title>
+        <style>
+            .bluebox {
+                color: white;
+                background-color: #434C98;
+                height: 100px;
+                width: auto;
+                
+                
+/*                visibility: hidden;*/
+/*                visibility: hidden; makes the division disappear but the it still occupy its space.*/
+                
+                
+/*                display: none;*/
+/*                display removes the division completely from the screen and from the space.*/
+                
+            }
+            
+            .yellowbox {
+                background-color: rgb(220, 226, 40);
+                height: 100px;
+                width: auto;
+            }
+            
+            .greenbox {
+                background-color: #0fff0f;
+                height: 100px;
+                width: auto;
+            }
+            
+            .great {
+                background-color: #f59393;
+                display: block;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="bluebox">
+            <p> Facebook is <span class="great">great.</span></p>
+        </div>
+        
+        <div class="yellowbox">
+            <p>Apple</p>
+        </div>
+        
+        <div class="greenbox">
+            <p>Microsoft</p>
+        </div>
+    </body>
+</html>
