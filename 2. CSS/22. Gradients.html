@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>Gradients</title>
+        <style>
+            .bluebox {
+                color: white;
+/*                background: linear-gradient(blue,white);*/
+                
+/*                background: linear-gradient(to left, green, white, orange);*/
+                
+/*                background: linear-gradient(90deg, blue, white, orange);*/
+                
+/*                background: linear-gradient(to bottom left, blue, white, orange);*/
+/*                background: linear-gradient(to left, rgb(0,0,255,0.5), rgb(0,0,255,1));*/
+                background: radial-gradient(circle, blue 5%, white 15%, orange 80%);   
+                
+/*
+                // some browsers need this syntax
+                
+                background: -webkit-linear-gradient(blue,white);
+                
+                background: -o-linear-gradient(blue,white);
+                
+                background: -moz-linear-gradient(blue,white);
+                
+*/
+                
+                height: 100px;
+                width: auto;
+            }
+            
+            .yellowbox {
+/*                background-color: rgb(220, 226, 40);*/
+                background: linear-gradient(to right,violet, indigo, blue, green,yellow,orange,red);
+                height: 100px;
+                width: auto;
+            }
+            
+            .greenbox {
+                background-color: #0fff0f;
+                height: 100px;
+                width: auto;
+            }
+            
+            .great {
+                background-color: #f59393
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="bluebox">
+            <p> Facebook is <span class="great">great.</span></p>
+        </div>
+        
+        <div class="yellowbox">
+            <p>Apple</p>
+        </div>
+        
+        <div class="greenbox">
+            <p>Microsoft</p>
+        </div>
+    </body>
+</html>
