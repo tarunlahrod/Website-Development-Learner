@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Buttons</title>
+</head>
+<body>
+    <p>Javascript</p>
+    <button onClick="alert('Alert using button only.')">Click me (Button 1)</button>
+<button id="button2">Click me (Button 2)</button>
+    <script>
+        document.getElementById("button2").onclick=function(){
+            window.alert("Alert using script invoked by clicking the button.");
+        }
+    </script>
+    
+    <button id="button3">Hover on me (Button 3)</button>
+    <script>
+        document.getElementById("button3").onmouseover=function(){
+            window.alert("Alert using script invoked by clicking the button.");
+        }
+    </script>
+</body>
+    
+</html>

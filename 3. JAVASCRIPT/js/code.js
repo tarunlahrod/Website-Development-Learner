@@ -1,1 +1,1 @@
-window.alert("this is the second alert")
+window.alert("This is the second alert")
