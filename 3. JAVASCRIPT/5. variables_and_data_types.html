@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>Variables and data types</title>
+        <style>
+            .bluebox {
+                color: white;
+                background-color: #434C98;
+                height: 100px;
+                width: auto;
+            }
+            
+            .yellowbox {
+                background-color: rgb(220, 226, 40);
+                height: 100px;
+                width: auto;
+            }
+            
+            .greenbox {
+                background-color: #0fff0f;
+                height: 100px;
+                width: auto;
+            }
+            
+            .great {
+                background-color: #f59393
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="bluebox" id="facebook">
+            <p> Facebook is <span class="great">great.</span></p>
+        </div>
+        
+        <div class="yellowbox" id="apple">
+            <p>Apple</p>
+        </div>
+        
+        <div class="greenbox" id="microsoft">
+            <p>Microsoft</p>
+        </div>
+        
+<!--        buttons-->
+        <button id="button1">Change facebook content</button>
+        <button id="button2">Change apple content (double click)</button>
+        
+        
+<!--        javascripts-->
+        <script>
+            var x = 3;
+            window.console.log(x); //for console press F12 and switch tab to Console.
+            var y;
+            y = 5;
+            var z;
+            window.console.log("The value of z is " + z);
+            z = x + y;
+            window.console.log("The value of z is " + z);
+            z = x + " " + y; //treats x and y as strings
+            window.console.log("The value of z is " + z);
+            window.console.log("The type of z is " + typeof(z));
+            var greeting = "Hello";
+            var firstname = "Aarav";
+            var message = greeting + " " + firstname;
+            window.console.log("The value of message is: " + message);
+            window.console.log("The type of message is " + typeof(message));
+            var check = (x == 3);
+            window.console.log("The value of check is: " + check);
+            window.console.log("The type of check is " + typeof(check));
+            var myArray = [1,2,3];
+            window.console.log(myArray);
+            window.console.log(typeof(myArray));
+        </script>
+    </body>
+</html>
