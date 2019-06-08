@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>objects using constructors</title>
+</head>
+<body>
+<p>Javascript</p>
+<script>
+    function phone(make, model, warranty, color){
+        this.make = make;
+        this.model = model;
+        this.warranty = warranty;
+        this.color = color;
+//        a function to extend the warranty
+        this.extendWarranty = function (x){
+            this.warranty += x;
+        }
+    }
+    
+    var myPhone = new phone("Apple", "IPhone 5s", 12, "Space Grey");
+    window.console.log(myPhone);
+    myPhone.extendWarranty(12);
+    window.console.log(myPhone);
+    </script>
+</body>
+    
+</html>
