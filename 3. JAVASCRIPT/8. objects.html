@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>objects</title>
+</head>
+<body>
+<p>Javascript</p>
+<script type="text/javascript">
+    var myPhone = {
+        make : "Apple",
+        model : "IPhone 4",
+        warranty : 12,
+        color : "white"
+    };
+//    displaying the object in the console
+    window.console.log(myPhone); 
+    
+//    deleting a property of the object
+    delete myPhone.warranty;
+    window.console.log(myPhone); 
+    
+//    to access any property of the object
+    window.console.log(myPhone.color);
+    
+//    myOtherPhone will be identical to myPhone
+    var myOtherPhone = myPhone;
+    window.console.log(myOtherPhone);
+    
+//    let's change some property of myOtherPhone
+    myOtherPhone.model = "IPhone 5";
+    window.console.log(myOtherPhone);
+    window.console.log(myPhone);
+
+//    the same thing happens to myPhone as well
+//    so WHEN WE SET TWO OBJECTS TO BE EQUAL TO EACH
+//    OTHER THEN  CHANGING CONTENT OF ONE OF THEM 
+//    WILL CHANGE THE CONTENT OF THE OTHER ONE.
+</script>
+</body>
+    
+</html>
