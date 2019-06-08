@@ -22,6 +22,18 @@
     window.console.log(myPhone);
     myPhone.extendWarranty(12);
     window.console.log(myPhone);
+    
+//    adding a new property to object myPhone
+    myPhone.condition = "like new";
+    window.console.log(myPhone);
+    
+    var myBrothersPhone = new phone("Apple", "IPhone 4", 6, "black");
+    window.console.log(myBrothersPhone);
+    window.console.log(myBrothersPhone.condition);
+    
+//    prototyping = default values
+    phone.prototype.condition = "new";
+    window.console.log(myBrothersPhone.condition);
     </script>
 </body>
     

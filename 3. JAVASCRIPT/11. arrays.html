@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>arrays</title>
+</head>
+<body>
+<p id="myParagraph">Javascript</p>
+<script>
+    var shoppingList = ["bread", "eggs", "milk"];
+
+    document.getElementById("myParagraph").innerHTML += "<br/>" + shoppingList;
+    
+//    accessing item using index
+    document.getElementById("myParagraph").innerHTML += "<br/>" + shoppingList[0];
+    
+    function showResult(x){
+        document.getElementById("myParagraph").innerHTML += "<br />" + shoppingList[x];
+    }
+    
+    showResult(shoppingList);
+    
+    shoppingList[1] = "yoghurt";
+    
+</script>
+</body>
+    
+</html>
