@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>functions</title>
+        <style>
+            .bluebox {
+                color: white;
+                background-color: #434C98;
+                height: 100px;
+                width: auto;
+            }
+            
+            .yellowbox {
+                background-color: rgb(220, 226, 40);
+                height: 100px;
+                width: auto;
+            }
+            
+            .greenbox {
+                background-color: #0fff0f;
+                height: 100px;
+                width: auto;
+            }
+            
+            .great {
+                background-color: #f59393
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="bluebox" id="facebook">
+            <p> Facebook is <span class="great">great.</span></p>
+        </div>
+        
+        <div class="yellowbox" id="apple">
+            <p>Apple</p>
+        </div>
+        
+        <div class="greenbox" id="microsoft">
+            <p>Microsoft</p>
+        </div>
+        
+<!--        buttons-->
+        <button id="button1" onclick="swap('facebook', 'apple')">Swap the content of facebook and apple</button>
+        <button id="button2" onclick="swap('apple', 'microsoft')">Swap the content of apple and microsoft</button>
+        
+        
+<!--        javascripts-->
+        <script>
+            function greeting1(){
+                window.alert("Hello");
+            }
+            greeting1();
+            
+            function greeting2(firstname){
+                window.alert("Hello " + firstname + "!");
+            }
+            greeting2("Tarun");
+            
+            function sum(a, b){
+                return a+b;
+            }
+            var x = sum(3, 7);
+            window.alert(x);
+            
+//            swap the content of two html elements
+            function swap(id1, id2){
+                var y = document.getElementById(id1).innerHTML;
+                var z = document.getElementById(id2).innerHTML;
+                
+                document.getElementById(id1).innerHTML = z;
+                document.getElementById(id2).innerHTML = y;
+            }
+        </script>
+    </body>
+</html>
