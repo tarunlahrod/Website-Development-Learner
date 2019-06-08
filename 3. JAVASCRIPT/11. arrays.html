@@ -11,17 +11,43 @@
 
     document.getElementById("myParagraph").innerHTML += "<br/>" + shoppingList;
     
+    showResult(shoppingList);
+    
 //    accessing item using index
     document.getElementById("myParagraph").innerHTML += "<br/>" + shoppingList[0];
     
     function showResult(x){
-        document.getElementById("myParagraph").innerHTML += "<br />" + shoppingList[x];
+        document.getElementById("myParagraph").innerHTML += "<br />" + x;
     }
     
     showResult(shoppingList);
     
     shoppingList[1] = "yoghurt";
+    showResult(shoppingList);
     
+    delete shoppingList[1];
+//    prints double comma, empty space for the element. It means the item is not completely deleted yet.
+    showResult(shoppingList);
+    
+//    For deleting completely, we have a splice function
+    shoppingList[1] = "orange";
+    showResult(shoppingList);
+    shoppingList.splice(1,1,);
+    showResult(shoppingList);
+    
+//    for adding new element
+    shoppingList.splice(1, 0, "banana", "apple");
+    showResult(shoppingList);
+    
+//     reversing
+    shoppingList.reverse();
+    showResult(shoppingList);
+    
+    var myString = 'what is weather like';
+    var myArray = myString.split(' ');
+    showResult(myArray);
+    var myArray = myString.split(' ',2);
+    showResult(myArray);
 </script>
 </body>
     
