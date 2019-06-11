@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Window and screen</title>
+    <style>
+        #div1{
+            background-color: aquamarine;
+        }
+        #div2{
+            background-color: cadetblue;
+        }
+        #div3{
+            background-color: darkgoldenrod;
+        }
+        #div4{
+            background-color: darkorchid;
+        }
+        .equalBox{
+            float: left;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="equalBox">Div1</div>
+    <div id="div2" class="equalBox">Div2</div>
+    <div id="div3" class="equalBox">Div3</div>
+    <div id="div4" class="equalBox">Div4</div>
+    
+    <script>
+//        var windowHeight = window.innerHeight;
+//        to make the code work in almost every browser we use
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        
+//        window.alert(windowHeight);
+        
+        // for height of the screen
+        var screenWidth = window.screen.width;
+//        window.alert(screenWidth);
+        
+        // for available height of the screen
+        var availableScreenHeight = window.screen.availHeight;
+//        window.alert(availableScreenHeight);
+        
+        
+        for(i=1; i<=4; i++){
+            document.getElementById("div"+i).style.width = window.innerWidth/4-16 + 'px';
+            document.getElementById("div"+i).style.height = window.innerHeight-10 + 'px';
+        }
+    </script>
+</body>
+    
+</html>
