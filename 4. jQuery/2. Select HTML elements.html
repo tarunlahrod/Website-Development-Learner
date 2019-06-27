@@ -8,19 +8,19 @@
             .bluebox {
                 color: white;
                 background-color: #434C98;
-                height: 100px;
+                height: auto;
                 width: auto;
             }
             
             .yellowbox {
                 background-color: rgb(220, 226, 40);
-                height: 100px;
+                height: auto;
                 width: auto;
             }
             
             .greenbox {
                 background-color: #0fff0f;
-                height: 100px;
+                height: auto;
                 width: auto;
             }
             
@@ -43,12 +43,32 @@
         
         <div class="yellowbox">
             <p>Apple</p>
-            <p><a>This is a link</a></p>
-            <p><a>This is another link</a></p>
+            <ul>
+                <li>Okabe Rintarou</li>
+                <li>Shina Mayuri</li>
+                <li>Hashida Itaru</li>
+            </ul>
+            <p><a href="https://google.com">This is a link</a></p>
+            <p><a href="https://microsoft.com">This is another link</a></p>
         </div>
         <p>Konichiwa minan-san!</p>
         <div class="greenbox">
             <p>Microsoft</p>
+            <ul>
+                <li>Okabe Rintarou</li>
+                <li>Shina Mayuri</li>
+                <li>Hashida Itaru</li>
+            </ul>
+            <table>
+                <tr><th>Anime</th><th>Favourite character</th><th>Define him/her</th></tr>
+                <tr><td>Steins;Gate</td><td>Hououin Kyouma</td><td>Mad Scientist</td></tr>
+                <tr><td>One Punch Man</td><td>Saitama</td><td>Stronggg AF!</td></tr>
+                <tr><td>Re:Zero</td><td>Rem</td><td>Kawaii, Waifu!</td></tr>
+                <tr><td>Attack on Titan</td><td>Mikasa Ackerman</td><td>She's strong!</td></tr>
+                <tr><td>Avatar: The last airbender</td><td>Sokka</td><td>Stud guy!</td></tr>
+            </table>
+
+            <p>Type your name: <input><button type="submit">Submit</button></p>
         </div>
 
         <script>
@@ -82,6 +102,22 @@
 
                 // for first child
                 $("p:first-child, p:last-child").css("text-decoration","underline");
+
+                // selecting a link
+                $("[href]").css("color","red");
+
+                // to select list items
+                $("li:first-child, li:last-child").css("background-color", "#bbf362");
+
+                // to access elements inside a table
+                $("tr:even").css("background-color", "#e1d446");
+
+                // to select inputs
+                $(":input").css("background-color", "#abcdef");
+                $(":submit").css("background-color", "#41a1c1");
+
+                // to select all the divs that includes a table
+                $("div:has(table)").css("background-color", "rgba(107, 180, 198, 0.697)");
             });
         </script>
     </body>
