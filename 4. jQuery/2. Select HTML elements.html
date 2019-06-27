@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>Select html elements</title>
+        <style>
+            .bluebox {
+                color: white;
+                background-color: #434C98;
+                height: 100px;
+                width: auto;
+            }
+            
+            .yellowbox {
+                background-color: rgb(220, 226, 40);
+                height: 100px;
+                width: auto;
+            }
+            
+            .greenbox {
+                background-color: #0fff0f;
+                height: 100px;
+                width: auto;
+            }
+            
+            .great {
+                background-color: #f59393
+            }
+        </style>
+
+        <!-- Adding script for jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    </head>
+    
+    <body>
+        <div class="bluebox">
+            <p> Facebook is <span id="great">great.</span></p>
+            <p class="orange">Paragraph 2</p>
+            <p>Paragraph 3</p>
+        </div>
+        
+        <div class="yellowbox">
+            <p>Apple</p>
+            <p><a>This is a link</a></p>
+            <p><a>This is another link</a></p>
+        </div>
+        <p>Konichiwa minan-san!</p>
+        <div class="greenbox">
+            <p>Microsoft</p>
+        </div>
+
+        <script>
+            $(function(){
+                // to select all html elements we use '*'
+                $("*").css("font-size", '16px');
+
+                // to change alignment of all the paragraphs
+                // $("p").css("text-align", "center");
+
+                // to select all the paragraphs that are direct childs of divs
+                // $("div > p").css("text-align", " center");
+                // $("div ~ p").css("text-align", " center");
+                $("div  p").css("text-align", " center");
+
+                // selecting using Id
+                $("#great").css("background-color", "#6ac57b");
+                
+                // selecting using class
+                $(".orange").css("background-color", "orange");
+
+                $("div.bluebox").css("font-family", "sans-serif");
+
+                // to select the first or last or both paragraph of a div
+                
+                // for first child
+                // $("p:first-child").css("text-decoration","underline");
+                
+                // // for last child
+                // $("p:last-child").css("text-decoration","underline");
+
+                // for first child
+                $("p:first-child, p:last-child").css("text-decoration","underline");
+            });
+        </script>
+    </body>
+</html>
