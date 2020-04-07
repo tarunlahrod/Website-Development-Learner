@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Embedding jQUERY and syntax</title>
+    
+<!--    <script src="js/jquery-3.4.1.min.js"></script>-->
+        
+<!--       using google cdn for faster loading time-->
+            <script     src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+            </script>
+
+    </head>
+    
+    <body>
+        <p id="myParagraph">jQuery</p> 
+        <p id="secondPara">Hello I'm here.</p>
+        
+        <script>
+            $(document).ready(function(){
+                $("p").hide();
+            });
+            
+            // another way of doing the above thing
+            $(function(){
+                $("p").hide();
+            });
+        </script>
+    </body>
+</html>

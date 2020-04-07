@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>Select html element</title>
+        <style>
+            .bluebox {
+                color: white;
+                background-color: #434C98;
+                height: 100px;
+                width: auto;
+            }
+            
+            .yellowbox {
+                background-color: rgb(220, 226, 40);
+                height: 100px;
+                width: auto;
+            }
+            
+            .greenbox {
+                background-color: #0fff0f;
+                height: 100px;
+                width: auto;
+            }
+            
+            #great {
+                background-color: #f59393
+            }
+        </style>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    </head>
+    
+    <body>
+        <div class="bluebox">
+            <p> Facebook is <span id="great">great.</span></p>
+            <p class="orange">Tch! Brat.</p>
+            <p>Petra: Imma surviving this whole time. LMAO</p>
+        </div>
+        
+        
+        <div class="yellowbox">
+            <p>Apple</p>
+            <p>Yo Jobs! <a>Here's a link for ya!</a></p>
+            <p> <a>One more for'ya.</a></p>
+        </div>
+        
+        <p>Just another day in Survey Crops!</p>
+        
+        <div class="greenbox">
+            <p>Microsoft</p>
+        </div>
+        
+        <script>
+            $(function(){
+                $("*").css("font-size", '16px');
+//                $("p").css("text-align", "center");	
+                
+                // to select the PARAGRA#a2c600PHS WHICH ARE DIRECT CHILD OF THE DIV
+                $("div > p").css("text-align", "center");
+                
+                // side links of paragraph
+//                $("div ~ p").css("text-align", "center");
+                
+                $("#great").css("background-color", "#35fc35");
+                
+                $(".orange").css("background-color", "#f9a43e");
+                
+                $("div.bluebox").css("font-family", "sans-serif");
+                
+                // to select the first child paragraph
+//                $("p:first-child").css("text-decoration", "underline");
+                
+                // same thing can be done with last child paragraph
+//                $("p:last-child").css("text-decoration", "underline");
+                
+                // the above two lines can be combined into one single line as-
+                $("p:first-child, p:last-child").css("text-decoration", "underline");
+              });
+        </script>
+    </body>
+</html>
