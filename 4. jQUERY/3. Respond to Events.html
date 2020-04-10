@@ -3,7 +3,7 @@
     <head>
     
         <meta charset="utf-8">
-        <title>Select html element</title>
+        <title>Respond to Events</title>
         <style>
             .bluebox {
                 color: white;
@@ -72,57 +72,56 @@
                 <tr><td>Connie</td><td>1500</td><td>6</td></tr>
             </table>
             
-            <p>Type your name, brat! : <input><button type="submit">Submit</button></p>
         </div>
         
+        <p>Type your name, brat! : </p>
+        <input id="input"><button type="submit" id="submit">Submit</button>
+        
         <script>
+            // we need to make the paragraph respond on clicking by changing the color of all the paragraph
             $(function(){
-                $("*").css("font-size", '16px');
-//                $("p").css("text-align", "center");	
+//                $("p").click(function(){
+//                    
+//                    // to change the color of all the paragraphs
+////                    $("p").css("background-color", "#d99fc7");
+//                    
+//                    // to change the color of the clicked paragraph (this paragraph)
+//                    $(this).css("background-color", "#d99fc7");
+//                });
                 
-                // to select the PARAGRAPHS WHICH ARE DIRECT CHILD OF THE DIV
-                $("div > p").css("text-align", "center");
+             // paragraph changes background color on mouse over
+                $("p").mouseover(function(){
+                    // change color
+                    $(this).css("background-color", "#f07841");
+                });
+
+                // paragraph returns to original background color on mouse out
+                $("p").mouseout(function(){
+                    // change color
+                    $(this).css("background-color", "");
+                });
                 
-                // side links of paragraph
-//                $("div ~ p").css("text-align", "center");
+                // change input color on focus
+                $("input").focus(function(){
+                    $(this).css("background-color", "#f61c1c");
+                });
                 
-                $("#great").css("background-color", "#35fc35");
+                // return to original input color on changing focus
+                $("input").blur(function(){
+                    $(this).css("background-color", "");
+                });
                 
-                $(".orange").css("background-color", "#f9a43e");
+                // on key up (keyup = input when typing) changing the css of the input
+                $("input").keyup(function(){
+                    $(this).css("background-color", "#52f810");
+                });
                 
-                $("div.bluebox").css("font-family", "sans-serif");
-                
-                // to select the first child paragraph
-//                $("p:first-child").css("text-decoration", "underline");
-                
-                // same thing can be done with last child paragraph
-//                $("p:last-child").css("text-decoration", "underline");
-                
-                // the above two lines can be combined into one single line as-
-                $("p:first-child, p:last-child").css("text-decoration", "underline");
-                
-                
-                // customizing href
-                $("[href]").css("color", "red");
-                
-                // lists
-                $("li:first-child").css("background-color", "#fc580c");
-                $("li:last-child").css("background-color", "#fc580c");
-                
-                // selecting a table
-                // even rows
-                $("tr:even").css("background-color", "#f4ef4c");
-                // odd rows
-                $("tr:odd").css("background-color", "#925352");
-                
-                // input selection
-                $(":input").css("background-color", "#02f7b2");
-                $(":submit").css("background-color", "#bf36f1");
-                $(":submit").css("color", "#fff");
-                
-                // select all the divs that include a table
-                $("div:has(table)").css("background-color", "#5b73cc");
-              });
+                // when we click on the submit button, we want the value to be resetted to blank and bg color back to white
+                $("#submit").click(function(){
+                    $("#input").css("background-color", "#ffffff");
+                    $("#input").val("");
+                });
+            });
         </script>
     </body>
 </html>
