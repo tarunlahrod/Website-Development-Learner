@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>Change content and attributes</title>
+        <style>
+            .bluebox {
+                color: white;
+                background-color: #434C98;
+                height: 100px;
+                width: auto;
+            }
+            
+            .yellowbox {
+                background-color: rgb(220, 226, 40);
+                height: 100px;
+                width: auto;
+            }
+            
+            .greenbox {
+                background-color: #0fff0f;
+                height: auto;
+                width: auto;
+            }
+            
+            #great {
+                background-color: #f59393
+            }
+        </style>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    </head>
+    
+    <body>
+        
+        <p>Enter your name: <input></p>
+        <button id="changeFacebook">Change Facebook text</button>
+        <button id="changeApple">Change Apple text</button>
+        <button id="changeInput">Change Input value</button>
+        <button id="changeMicrosoft">Change Microsoft Link</button>
+        <button id="addText">Add text</button>
+        
+        
+        <div class="bluebox" id="facebook">
+            <p> Facebook is <span id="great">great.</span></p>
+        </div>
+        
+        
+        <div class="yellowbox" id="apple">
+            <p>Apple</p>
+        </div>
+        
+        
+        <div class="greenbox" id="microsoft">
+            <p id="microsoftParagraph">Microsoft</p> 
+            <p><a href="http://www.microsoft.com" title="Microsoft" id="microsoftLink">Microsoft Link</a></p>
+        </div>
+    
+
+        <script>
+            $(function(){
+                $("#changeFacebook").click(function(){
+                    $("#facebook").text("This is facebook.");
+                });
+                
+                $("#changeApple").click(function(){
+                    $("#apple").html("<p>This is Apple</p> <p> New iOS available</p>");
+                });
+                
+                $("#changeInput").click(function(){
+                    $("input").val("New Value");
+                });
+                
+                $("#changeMicrosoft").click(function(){
+                    $("#microsoftLink").attr({"href" : "http://www.google.com", "title" : "Google"});
+                });
+                
+                // append function to append content after the existing content
+//                $("#addText").click(function(){
+//                    $("#microsoft").append("<ul><li>Eren</li><li>Levi</li><li>Mikasa</li></ul>");
+//                });
+                
+                // to add content before the existing content we use prepend
+//                $("#addText").click(function(){
+//                    $("#microsoft").prepend("<ul><li>Eren</li><li>Levi</li><li>Mikasa</li></ul>");
+//                });
+                
+                // to add content right after the paragraph (some other element)
+                $("#addText").click(function(){
+                    $("#microsoftParagraph").after("<ul><li>Eren</li><li>Levi</li><li>Mikasa</li></ul>");
+                });
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
