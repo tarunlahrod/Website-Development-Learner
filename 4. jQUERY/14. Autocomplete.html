@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>Autocomplete</title>
+        <style>
+            .bluebox {
+                color: white;
+                background-color: #434C98;
+                height: 100px;
+                width: auto;
+            }
+            
+            .yellowbox {
+                background-color: rgb(220, 226, 40);
+                height: 100px;
+                width: auto;
+            }
+            
+            #great {
+                background-color: #f59393
+            }
+            
+            .sans-serif{
+                font-family: sans-serif;
+            }
+			
+			.ui-autocomplete {
+				max-height: 200px;
+				overflow-y: auto;
+				max-width: 200px;
+/*				overflow-x: hidden;*/
+				overflow-x: auto;
+			}
+			
+			#city {
+				width: 200px;
+			}
+        </style>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    
+    <body>    
+        
+        <div class="bluebox ui-corner-all" id="facebook">
+            <p> Facebook</p>
+			<p>Input your city: <input id="city"></p>
+        </div>
+        
+		<div class="yellowbox sans-serif ui-corner-all" id="apple">
+			<p>Apple</p>
+		</div>
+
+        <div class="greenbox ui-corner-all" id="microsoft">
+            <p id="microsoftParagraph">Microsoft</p> 
+            <p><a href="http://www.microsoft.com" title="Microsoft" id="microsoftLink">Microsoft Link</a></p>
+        </div>
+		
+        <script>
+           $(function(){
+				$("#city").autocomplete({
+					source: ["Looooooooooooooooondon", "Prague", "Berlin", "New Delhi", "Tokyo", "Rome", "Torronto", "Abu Dhabi", "Dubai", "Beijing", "Paris", "London", "Prague", "Berlin", "New Delhi", "Tokyo", "Rome", "Torronto", "Abu Dhabi", "Dubai", "Beijing", "Paris", "London", "Prague", "Berlin", "New Delhi", "Tokyo", "Rome", "Torronto", "Abu Dhabi", "Dubai", "Beijing", "Paris", "London", "Prague", "Berlin", "New Delhi", "Tokyo", "Rome", "Torronto", "Abu Dhabi", "Dubai", "Beijing", "Paris", ]
+				});
+           });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+

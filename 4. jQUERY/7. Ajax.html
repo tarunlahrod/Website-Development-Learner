@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>jQuery effects</title>
+        <style>
+            .bluebox {
+                color: white;
+                background-color: #434C98;
+                height: 100px;
+                width: 300px;
+            }
+            
+            .yellowbox {
+                background-color: rgb(220, 226, 40);
+                height: 100px;
+                width: auto;
+            }
+            
+            .greenbox {
+                background-color: #0fff0f;
+                height: 100px;
+                width: auto;
+            }
+            
+            #great {
+                background-color: #f59393
+            }
+            
+            .sans-serif{
+                font-family: sans-serif;
+            }
+            
+        </style>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    </head>
+    
+    <body>    
+        
+        <button id="loadMS">Load data in Microsoft</button>
+        <div class="bluebox" id="facebook">
+            <p> Facebook is <span id="great">great.</span></p>
+        </div>
+        
+        
+        <div class="yellowbox sans-serif" id="apple">
+            <p>Apple</p>
+        </div>
+        
+    
+        <div class="greenbox" id="microsoft">
+            <p id="microsoftParagraph">Microsoft</p> 
+            <p><a href="http://www.microsoft.com" title="Microsoft" id="microsoftLink">Microsoft Link</a></p>
+        </div>
+        
+        <p>Enter your name: <input></p>
+
+        <script>
+           $(function(){
+               $("#facebook").load("ajax/somedata.txt");
+               $("#apple").load("ajax/somedata.txt #paragraph1");
+//               $("#loadMS").click(function(){
+//                   $.ajax({
+//                     //  url of the file storing the data in "data" variable and then exexute the function on successfully retrieving the data
+//                     url : "ajax/somedata.txt", success : function(data){
+//                         $("#microsoft").html(data);
+//                     }  
+//                   });
+//               });
+               
+               // the function below does the same as the above one
+               $("#loadMS").click(function(){
+                   $.ajax({url : "ajax/somedata.txt"}).done(function(data){
+                       $("#microsoft").html(data);
+                   });
+               });
+           });
+            
+            
+        </script>
+    </body>
+</html>
+
+
+
+
+
+

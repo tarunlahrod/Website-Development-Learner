@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>Draggable and Droppable</title>
+        <style>
+            .bluebox {
+                color: white;
+                background-color: #434C98;
+                height: 100px;
+                width: auto;
+            }
+            
+            .yellowbox {
+                background-color: rgb(220, 226, 40);
+                height: auto;
+                width: auto;
+				padding: 5px;
+				margin-top: 20px;
+            }
+            
+            .greenbox {
+                background-color: #0fff0f;
+                height: 100px;
+                width: auto;
+            }
+            
+            #great {
+                background-color: #f59393
+            }
+            
+            .sans-serif{
+                font-family: sans-serif;
+            }
+			
+			#droppable {
+				background-color: #e64ff1;
+				height: 200px;
+				width: auto;
+				margin-top: 20px;
+				color: white;
+			}
+        </style>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    
+    <body>    
+        
+        
+
+        <div class="bluebox ui-corner-all" id="facebook">
+            <p> Facebook is <span id="great">great.</span></p>
+        </div>
+        
+        
+        <div class="yellowbox sans-serif ui-corner-all" id="apple">
+            <p>Apple</p>
+			<p>You can drag items from here</p>
+			<ul id="list">
+				<li>Kurisu</li>
+				<li>Okabe</li>
+				<li>Mayuri</li>
+				<li>Moeka</li>
+			</ul>
+        </div>
+        
+    
+        <div class="greenbox ui-corner-all" id="microsoft">
+            <p id="microsoftParagraph">Microsoft</p> 
+            <p><a href="http://www.microsoft.com" title="Microsoft" id="microsoftLink">Microsoft Link</a></p>
+        </div>
+        
+		<div id="droppable" class="ui-corner-all">
+			<p>You can drop things here.</p>
+		</div>
+		
+        <script>
+           $(function(){
+				$("#facebook").draggable();
+
+				$("#apple").draggable({
+					axis: "y"
+				});
+
+				$("#microsoft").draggable({
+					revert : true, 
+					start: function(){
+						$("#facebook").css("background-color", "#d70d0d");
+					},
+					drag: function(){
+						$("#microsoft").css('background-color', 'rgb(' + Math.floor(256*Math.random()) + ',' + Math.floor(256*Math.random()) + ',' + Math.floor(256*Math.random()) + ')' );
+					},
+					stop: function(){
+						$("#apple").css("background-color", "#df10ee");
+					}
+				});
+			   	
+			   	$("#droppable").droppable({
+					drop: function(event, ui){
+						$(this).css("background-color", "#ef7909");
+						
+						// remove the current paragraph
+						$(this).find("p").remove();
+						$("<div></div>").text(ui.draggable.text()).appendTo(this);
+					},
+					accept: "#list li"
+				});
+			   
+			   $("#list").find("li").draggable({
+				   helper: "clone",
+				   appendTo: "body"
+			   });
+               
+           });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+

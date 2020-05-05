@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>Select menu</title>
+        <style>
+            .bluebox {
+                color: white;
+                background-color: #434C98;
+                height: 100px;
+                width: auto;
+            }
+            
+            .yellowbox {
+                background-color: rgb(220, 226, 40);
+                height: 100px;
+                width: auto;
+            }
+            
+            .greenbox {
+                background-color: #0fff0f;
+                height: 100px;
+                width: auto;
+            }
+            
+            .sans-serif{
+                font-family: sans-serif;
+            }
+			
+			#strength, #strength2 {
+				width: 200px;
+			}
+        </style>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    
+    <body>    
+        
+        <div class="bluebox ui-corner-all" id="facebook">
+			<label for="strength">Select your biggest strength:</label>
+			<br/>
+			<select id="strength">
+				<option>Motivation</option>
+				<option selected="selected">Creativity</option>
+				<option>Curiosity</option>
+				<option>Integrity</option>
+				<option>Modesty</option>
+			</select>
+		</div>
+        
+		<div class="yellowbox sans-serif ui-corner-all" id="apple">
+			<label for="strength">Select your biggest strength:</label>
+			<br/>
+			<form>
+				<select id="strength2" name="strength2">
+					<optgroup label="Group1">
+						<option>Motivation</option>
+						<option selected="selected">Creativity</option>
+						<option>Curiosity</option>
+					</optgroup>
+					<optgroup label="Group2">
+						<option>Integrity</option>
+						<option>Modesty</option>
+					</optgroup>
+				</select>
+			</form>
+		</div>
+
+        <div class="greenbox ui-corner-all" id="microsoft">
+            <p id="microsoftParagraph">Microsoft</p> 
+        </div>
+		
+        <script>
+           $(function(){
+				$("#strength").selectmenu();
+				$("#strength2").selectmenu();
+           });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
